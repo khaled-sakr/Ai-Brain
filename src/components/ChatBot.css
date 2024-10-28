@@ -1,0 +1,210 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Tajawal', sans-serif;
+
+}
+
+body {
+  font-family: 'Tajawal', sans-serif;
+
+}
+
+.chat-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+}
+
+.chat-container {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  width: 95%;
+  max-width: 600px;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(15px);
+  overflow: hidden;
+}
+
+.chat-header {
+  background: #007acc;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chat-message {
+  display: flex;
+  align-items: flex-start;
+  transition: transform 0.3s ease-in-out;
+}
+
+.chat-message.user {
+  justify-content: flex-end;
+}
+
+.chat-message.user .message-text {
+  background-color: #007acc;
+  color: white;
+  border-radius: 15px 15px 0 15px;
+  padding: 12px;
+}
+
+.chat-message.bot .message-text {
+  background-color: #f1f1f1;
+  color: #333;
+  border-radius: 15px 15px 15px 0;
+  padding: 12px;
+}
+
+.message-avatar {
+  width: 50px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.message-text {
+  max-width: 70%;
+  font-size: 0.95rem;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.loading {
+  font-size: 0.9rem;
+  color: #555;
+  text-align: center;
+}
+
+.chat-input-form {
+  display: flex;
+  padding: 15px;
+  border-top: 1px solid #ddd;
+  background: #f5f5f5;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.chat-input {
+  flex: 1;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  outline: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.send-button {
+  background-color: #007acc;
+  border: none;
+  color: white;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-left: 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.send-button:hover {
+  background-color: #005bb5;
+  transform: scale(1.05);
+}
+
+.microphone-button {
+  border: none;
+  color: white;
+  border-radius: 50%;
+  transform: scale(1.05);
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.microphone-button:active {
+  transform: scale(0.95); /* ????? ???? ?????? */
+  background-color: rgba(255, 255, 255, 0.2); /* ????? ??????? ??? ????? */
+}
+
+.select-question-button {
+    background-color: #4CAF50; /* ??? ???? */
+    color: white; /* ??? ???? */
+    border: none; /* ????? ?????? */
+    padding: 10px 15px; /* ?????? */
+    margin: 5px; /* ??????? */
+    cursor: pointer; /* ????? ?????? ??? ??????? ??? ???? */
+    border-radius: 5px; /* ????? ????? */
+    transition: background-color 0.3s; /* ????? ???????? */
+}
+
+.select-question-button:hover {
+    background-color: #45a049; /* ??? ???? ??? ??????? */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.loading-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3.0rem;
+  color: #007acc;
+}
+
+.loading-dots span {
+  animation: dot 1s infinite;
+  opacity: 0;
+}
+
+.loading-dots span:nth-child(1) {
+  animation-delay: 0s;
+}
+.loading-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.loading-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes dot {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
