@@ -32,7 +32,7 @@ const ChatPage = () => {
       if (response.data) {
         // Clear the similar question message if it exists before adding new ones
         const updatedMessages = newMessages.filter(
-          (msg) => msg.text !== ":هل تقصد"
+          (msg) => msg.text !== "Do you mean:"
         );
 
         // Check if similar questions are not already shown
